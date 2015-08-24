@@ -1,0 +1,2 @@
+# thinkphpExcelExport
+基于thinkphp+phpExcel的Excel导出demo，封装好了导出函数，可直接调用
