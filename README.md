@@ -10,6 +10,7 @@
  * @param data 导出数据
  * @param title 表格的字段名 字段长度有限制，一般都够用，可以改变 $length1和$length2来增长
  * @return subject 表格主题 命名为主题+导出日期
+ * 
  */
 
 function exportExcel($data,$title,$subject)
