@@ -1,8 +1,8 @@
 # thinkphpExcelExport
 基于thinkphp+phpExcel的Excel导出demo，封装好了导出函数，可直接调用
-使用方式：
-1.下载phpExcel包放到Vendor文件夹
-2.调用函数（函数位于common/function.php）
+#使用方式：
+#1.下载phpExcel包放到Vendor文件夹
+#2.调用函数（函数位于common/function.php）
 /**
  * Excel导出
  * @param data 导出数据
