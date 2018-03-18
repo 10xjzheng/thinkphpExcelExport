@@ -34,18 +34,15 @@ function exportExcel($data,$title,$subject){
         ->setCategory("Test result file");  
     $length1=array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','AA','AB','AC','AD');
     $length2=array('A1','B1','C1','D1','E1','F1','G1','H1','I1','J1','K1','L1','M1','N1','O1','P1','Q1','R1','S1','T1','U1','V1','W1','X1','Y1','Z1','AA1','AB1','AC1','AD1');
-    //set width
-    for($a=0;$a<$titleLen && $a < 30;$a++){
-         $objPHPExcel->getActiveSheet()->getColumnDimension($length1[$a])->setWidth(20);
-    }
-    //set font size bold  
+    //set font size bold
     $objPHPExcel->getActiveSheet()->getDefaultStyle()->getFont()->setSize(10);  
     $objPHPExcel->getActiveSheet()->getStyle($length2[0].':'.$length2[$titleLen-1])->getFont()->setBold(true);
     $objPHPExcel->getActiveSheet()->getStyle($length2[0].':'.$length2[$titleLen-1])->getFont()->setBold(true);
     $objPHPExcel->getActiveSheet()->getStyle($length2[0].':'.$length2[$titleLen-1])->getBorders()->getAllBorders()->setBorderStyle(PHPExcel_Style_Border::BORDER_THIN);
 
-    // set table header content
-    for($a=0;$a<$titleLen;$a++){
+    // set width and table header content
+    for($a=0;$a<$titleLen && $a < 30;$a++){
+        $objPHPExcel->getActiveSheet()->getColumnDimension($length1[$a])->setWidth(20);
           $objPHPExcel->setActiveSheetIndex(0)->setCellValue($length2[$a], $title[$a]);
     }
     for($i=0;$i<$dataLen;$i++){
